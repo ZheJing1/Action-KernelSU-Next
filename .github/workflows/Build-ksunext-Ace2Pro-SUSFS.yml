@@ -47,8 +47,6 @@ jobs:
          mkdir kernel_workspace && cd kernel_workspace
          repo init -u https://github.com/Lutitious/android_kernel_nubia_NX729J.git -b main
          repo sync
-         rm kernel_platform/common/android/abi_gki_protected_exports_* || echo "No protected exports!"
-         rm kernel_platform/msm-kernel/android/abi_gki_protected_exports_* || echo "No protected exports!"
          sed -i 's/ -dirty//g' kernel_platform/common/scripts/setlocalversion
          sed -i 's/ -dirty//g' kernel_platform/msm-kernel/scripts/setlocalversion
 
