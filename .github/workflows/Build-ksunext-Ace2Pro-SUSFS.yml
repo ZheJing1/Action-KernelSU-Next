@@ -1,19 +1,7 @@
-name: Build KernelSU Next SUSFS Ace2Pro
+name: Build KernelSU Next SUSFS Redmagic8pro
 on:
   workflow_dispatch:
     inputs:
-      CPU:
-        description: "分支"
-        required: true
-        default: 'sm8550'
-      FEIL:
-        description: "配置文件"
-        required: true
-        default: 'oneplus_ace2pro_v'
-      CPUD:
-        description: "处理器代号"
-        required: true
-        default: 'kalama'
       ANDROID_VERSION:
         description: "内核安卓版本"
         required: true
@@ -41,7 +29,7 @@ jobs:
       - name: Configure Git
         run: |
          git config --global user.name "build"
-         git config --global user.email "263623064@qq.com"
+         git config --global user.email "3163678881@qq.com"
 
       - name: Install dependencies
         run: |
@@ -57,7 +45,7 @@ jobs:
       - name: Initialize repo and sync
         run: |
          mkdir kernel_workspace && cd kernel_workspace
-         repo init -u https://github.com/OnePlusOSS/kernel_manifest.git -b refs/heads/oneplus/${{ github.event.inputs.CPU }} -m ${{ github.event.inputs.FEIL }}.xml --depth=1
+         repo init -u https://github.com/Lutitious/android_kernel_nubia_NX729J.git -b main --depth=1
          repo sync
          rm kernel_platform/common/android/abi_gki_protected_exports_* || echo "No protected exports!"
          rm kernel_platform/msm-kernel/android/abi_gki_protected_exports_* || echo "No protected exports!"
