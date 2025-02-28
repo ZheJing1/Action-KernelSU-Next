@@ -45,7 +45,7 @@ jobs:
       - name: Initialize repo and sync
         run: |
          mkdir kernel_workspace && cd kernel_workspace
-         repo init -u https://github.com/Lutitious/android_kernel_nubia_NX729J.git -b main
+         repo init -u https://github.com/Lutitious/android_kernel_nubia_NX729J.git -b main -m default.xml --depth=1
          repo sync
 
       - name: Set up KernelSU Next
